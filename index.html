@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Volei Stars – Transformando jogadores em estrelas. Escolha seu plano de treino de vôlei e evolua com a gente!">
+  <meta property="og:title" content="Volei Stars">
+  <meta property="og:description" content="Transformando jogadores em estrelas ⭐. Conheça nossos planos de treino!">
+  <meta property="og:type" content="website">
 <title>Vôlei Stars</title>
 
 <link rel="icon" href="Icon/favicon_io (1)/favicon.ico">
@@ -84,6 +86,24 @@
   .vs-header-cta:hover { background: #cc7000; }
 
   /* HERO */
+
+  .hero-logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 15px auto; 
+  filter: drop-shadow(0 0 10px rgba(255,140,0,0.6));
+}
+
+.hero-logo {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
   .vs-hero {
     text-align: center;
     padding: 72px 2rem 64px;
@@ -489,6 +509,10 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
+
+.hero-logo {
+  width: 90px;
+}
 }
 
 
@@ -520,7 +544,12 @@ Falar no WhatsApp
   </header>
 
   <section class="vs-hero">
-    <div class="vs-hero-badge">✦ Seu evento até você</div>
+    <img src="Imagens/image_2026-04-08_184055219-removebg-preview.png"
+     alt="Logo Volei Stars"
+     class="hero-logo"
+     loading="lazy">
+
+<div class="vs-hero-badge">✦ Seu evento até você</div>
     <h1>Transformando jogadores<br>em <span>estrelas</span></h1>
     <p>Treinos personalizados, técnicas avançadas e metodologia profissional para todos os níveis.</p>
     <div class="vs-hero-actions">
@@ -630,7 +659,6 @@ Escolher plano
 </div>
 
 <script>
-
 const fotos = [
   'Imagens/WhatsApp Image 2026-04-09 at 17.43.49.jpeg',
   'Imagens/WhatsApp Image 2026-04-09 at 17.43.49 (1).jpeg',
@@ -644,7 +672,20 @@ const fotos = [
 const mosaic = document.getElementById('mosaic');
 const celulas = [];
 
-/* cria 4 colunas (1x1x1x1) */
+/* embaralha array */
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+/* pega 4 imagens únicas */
+function pegar4Unicas() {
+  return shuffle([...fotos]).slice(0, 4);
+}
+
+/* inicia com 4 diferentes */
+let atuais = pegar4Unicas();
+
+/* cria células */
 for (let i = 0; i < 4; i++) {
   const cell = document.createElement('div');
   cell.className = 'mosaic-cell';
@@ -652,8 +693,8 @@ for (let i = 0; i < 4; i++) {
   const imgA = document.createElement('img');
   const imgB = document.createElement('img');
 
-  imgA.src = fotos[i % fotos.length];
-  imgB.src = fotos[(i + 1) % fotos.length];
+  imgA.src = atuais[i];
+  imgB.src = atuais[(i + 1) % 4];
 
   imgA.className = 'frente';
   imgB.className = 'atras';
@@ -662,33 +703,28 @@ for (let i = 0; i < 4; i++) {
   cell.appendChild(imgB);
   mosaic.appendChild(cell);
 
-  celulas.push({
-    imgA,
-    imgB,
-    frenteAtual: true,
-    proxFoto: (i + 2) % fotos.length
-  });
+  celulas.push({ imgA, imgB, frenteAtual: true });
 }
 
-/* troca aleatória */
+/* troca SEM repetir lado a lado */
 setInterval(() => {
-  const idx = Math.floor(Math.random() * 4);
-  const c = celulas[idx];
+  let novas = pegar4Unicas(); // sempre 4 diferentes
 
-  if (c.frenteAtual) {
-    c.imgB.src = fotos[c.proxFoto];
-    c.imgA.className = 'atras';
-    c.imgB.className = 'frente';
-  } else {
-    c.imgA.src = fotos[c.proxFoto];
-    c.imgB.className = 'atras';
-    c.imgA.className = 'frente';
-  }
+  celulas.forEach((c, i) => {
+    if (c.frenteAtual) {
+      c.imgB.src = novas[i];
+      c.imgA.className = 'atras';
+      c.imgB.className = 'frente';
+    } else {
+      c.imgA.src = novas[i];
+      c.imgB.className = 'atras';
+      c.imgA.className = 'frente';
+    }
 
-  c.frenteAtual = !c.frenteAtual;
-  c.proxFoto = (c.proxFoto + 1) % fotos.length;
+    c.frenteAtual = !c.frenteAtual;
+  });
+
 }, 3000);
-
 </script>
 
 </body>
