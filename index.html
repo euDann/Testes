@@ -11,7 +11,6 @@
 <link rel="icon" href="Icon/favicon_io (1)/favicon.ico">
 
 <style>
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: transparent; }
 
@@ -58,9 +57,7 @@
     color: #fff;
     letter-spacing: -0.3px;
   }
-  .vs-logo-text span {
-    color: #ffb300;
-  }
+  .vs-logo-text span { color: #ffb300; }
   .vs-nav {
     display: flex;
     align-items: center;
@@ -77,7 +74,7 @@
     background: #ff8c00;
     color: #fff;
     border: none;
-    border-radius: var(--border-radius-md, 8px);
+    border-radius: 8px;
     padding: 8px 18px;
     font-size: 14px;
     font-weight: 500;
@@ -87,23 +84,19 @@
   .vs-header-cta:hover { background: #cc7000; }
 
   /* HERO */
-
   .hero-logo {
-  width: 120px;
-  display: block;
-  margin: 0 auto 15px auto; 
-  filter: drop-shadow(0 0 10px rgba(255,140,0,0.6));
-}
+    width: 120px;
+    display: block;
+    margin: 0 auto 15px auto; 
+    filter: drop-shadow(0 0 10px rgba(255,140,0,0.6));
+    animation: float 3s ease-in-out infinite;
+  }
 
-.hero-logo {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
-}
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
 
   .vs-hero {
     text-align: center;
@@ -132,9 +125,7 @@
     letter-spacing: -1px;
     margin-bottom: 16px;
   }
-  .vs-hero h1 span {
-    color: #ffb300;
-  }
+  .vs-hero h1 span { color: #ffb300; }
   .vs-hero p {
     font-size: 18px;
     color: rgba(255,255,255,0.5);
@@ -152,7 +143,7 @@
     background: #ff8c00;
     color: #fff;
     border: none;
-    border-radius: var(--border-radius-md, 8px);
+    border-radius: 8px;
     padding: 12px 24px;
     font-size: 15px;
     font-weight: 500;
@@ -163,12 +154,11 @@
     transition: background 0.2s, transform 0.1s;
   }
   .btn-primary:hover { background: #cc7000; }
-  .btn-primary:active { transform: scale(0.98); }
   .btn-ghost {
     background: rgba(255,255,255,0.05);
     color: rgba(255,255,255,0.7);
     border: 0.5px solid rgba(255,255,255,0.12);
-    border-radius: var(--border-radius-md, 8px);
+    border-radius: 8px;
     padding: 12px 24px;
     font-size: 15px;
     font-weight: 500;
@@ -179,6 +169,7 @@
     transition: background 0.2s;
   }
   .btn-ghost:hover { background: rgba(255,255,255,0.09); }
+
   .vs-social-row {
     margin-top: 24px;
     display: flex;
@@ -194,7 +185,6 @@
     font-weight: 500;
     text-decoration: none;
   }
-  .vs-insta:hover { color: #d99fff; }
 
   /* STATS */
   .vs-stats {
@@ -210,42 +200,14 @@
     padding: 28px 0;
     text-align: center;
   }
-  .vs-stat-num {
-    font-size: 28px;
-    font-weight: 500;
-    color: #fff;
-  }
-  .vs-stat-label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 4px;
-  }
+  .vs-stat-num { font-size: 28px; font-weight: 500; color: #fff; }
+  .vs-stat-label { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 4px; }
 
   /* PRICING */
-  .vs-pricing {
-    padding: 72px 2rem;
-    text-align: center;
-  }
-  .vs-section-label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #ffb300;
-    margin-bottom: 12px;
-  }
-  .vs-section-title {
-    font-size: 34px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
-  }
-  .vs-section-sub {
-    font-size: 15px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 48px;
-  }
+  .vs-pricing { padding: 72px 2rem; text-align: center; }
+  .vs-section-label { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #ffb300; margin-bottom: 12px; }
+  .vs-section-title { font-size: 34px; font-weight: 500; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .vs-section-sub { font-size: 15px; color: rgba(255,255,255,0.4); margin-bottom: 48px; }
   .vs-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -256,112 +218,20 @@
   .vs-card {
     background: #13151f;
     border: 0.5px solid rgba(255,255,255,0.08);
-    border-radius: var(--border-radius-lg, 12px);
+    border-radius: 12px;
     padding: 28px 24px 24px;
     text-align: left;
-    position: relative;
     transition: border-color 0.2s;
   }
-  .vs-card:hover { border-color: rgba(255,140,0, 0.3); }
-  .vs-card.featured {
-    border: 1.5px solid #ff8c00;
-    background: #12192e;
-  }
-  .vs-badge-pop {
-    display: inline-block;
-    background: rgba(255,140,0,0.2);
-    color: #ffd166;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-    letter-spacing: 0.3px;
-  }
-  .vs-card-tier {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .vs-card-price {
-    font-size: 40px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: -1px;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .vs-card-price sup {
-    font-size: 18px;
-    font-weight: 400;
-    vertical-align: super;
-    color: rgba(255,255,255,0.6);
-  }
-  .vs-card-period {
-    font-size: 13px;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 24px;
-  }
-  .vs-divider {
-    border: none;
-    border-top: 0.5px solid rgba(255,255,255,0.07);
-    margin-bottom: 20px;
-  }
-  .vs-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-  .vs-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.4;
-  }
-  .vs-check {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background:  rgba(255,140,0,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .vs-check svg {
-    width: 9px;
-    height: 9px;
-  }
-  .vs-card.featured .vs-check {
-    background: rgba(255,140,0,0.2);;
-  }
-  .btn-plan {
-    width: 100%;
-    padding: 11px;
-    border-radius: var(--border-radius-md, 8px);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: 0.5px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.7);
-  }
-  .btn-plan:hover { background: rgba(255,255,255,0.1); color: #fff; }
-  .btn-plan.featured {
-    background: #ff8c00;
-    border-color: transparent;
-    color: #fff;
-  }
-  .btn-plan.featured:hover { background: #cc7000; }
+  .vs-card.featured { border: 1.5px solid #ff8c00; background: #12192e; }
+  .vs-card-tier { font-size: 13px; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 8px; }
+  .vs-card-price { font-size: 40px; font-weight: 500; color: #fff; }
+  .vs-card-price sup { font-size: 18px; color: rgba(255,255,255,0.6); vertical-align: super; }
+  .vs-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; margin-top: 20px; }
+  .vs-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.65); }
+  .vs-check { width: 16px; height: 16px; border-radius: 50%; background: rgba(255,140,0,0.12); display: flex; align-items: center; justify-content: center; }
+  .btn-plan { width: 100%; padding: 11px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; border: 0.5px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); }
+  .btn-plan.featured { background: #ff8c00; border: none; color: #fff; }
 
   /* FOOTER */
   .vs-footer {
@@ -369,168 +239,53 @@
     border-top: 0.5px solid rgba(255,255,255,0.06);
     padding: 32px 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 16px;
   }
-  .vs-footer-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .vs-footer-logo {
-    width: 28px; height: 28px;
-    background: #ff8c00;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px;
-  }
-  .vs-footer-brand {
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.6);
-  }
   .vs-footer-brand span { color: #ffb300; }
-  .vs-footer-copy {
-    font-size: 13px;
-    color: rgba(255,255,255,0.25);
-  }
-  .vs-footer-links {
-    display: flex;
-    gap: 20px;
-  }
-  .vs-footer-links a {
-    font-size: 13px;
-    color: rgba(255,255,255,0.35);
-    text-decoration: none;
-  }
-  .vs-footer-links a:hover { color: rgba(255,255,255,0.65); }
-  
-  /* MOSAICO 1x1x1x1 */
-.mosaic {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-}
 
-.mosaic-cell {
-  position: relative;
-  overflow: hidden;
-}
+  /* BACKGROUND & MOSAIC */
+  .mosaic { position: fixed; inset: 0; z-index: -2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .mosaic-cell { position: relative; overflow: hidden; }
+  .mosaic-cell img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5); transition: opacity 1.2s; }
+  .mosaic-cell img.frente { opacity: 1; }
+  .mosaic-cell img.atras { opacity: 0; }
+  .overlay { position: fixed; inset: 0; z-index: -1; background: linear-gradient(to bottom, rgba(13,13,26,0.7), rgba(13,13,26,0.4), rgba(13,13,26,0.85)); }
 
-.mosaic-cell img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5);
-  transition: opacity 1.2s ease-in-out;
-}
-
-.mosaic-cell img.frente { opacity: 1; }
-.mosaic-cell img.atras { opacity: 0; }
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    rgba(13,13,26,0.7),
-    rgba(13,13,26,0.4),
-    rgba(13,13,26,0.85)
-  );
-}
-
+  /* --- RESPONSIVIDADE (MOBILE) --- */
   @media (max-width: 768px) {
+    .vs-nav { display: none; }
+    .vs-header { padding: 0 1rem; }
+    
+    .vs-hero h1 { font-size: 32px; }
+    .vs-hero p { font-size: 15px; }
 
-  /* HEADER */
-  .vs-header {
-    padding: 0 1rem;
+    /* Ajuste dos botões Hero no Mobile */
+    .vs-hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn-primary, .btn-ghost {
+      width: 100%;
+      max-width: 280px; /* Impede que fiquem grandes demais */
+      justify-content: center;
+    }
+
+    .vs-stats { grid-template-columns: 1fr; }
+    .vs-cards { grid-template-columns: 1fr; }
+    
+    .btn-plan {
+      max-width: 280px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .vs-footer { flex-direction: column; text-align: center; }
+    .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+    .hero-logo { width: 90px; }
   }
-
-  .vs-nav {
-    display: none; 
-  }
-
-  /* HERO */
-  .vs-hero {
-    padding: 50px 20px;
-  }
-
-  .vs-hero h1 {
-    font-size: 32px; 
-  }
-
-  .vs-hero p {
-    font-size: 15px;
-  }
-
-  .vs-hero-actions {
-    flex-direction: column; 
-    gap: 10px;
-  }
-
-  .btn-primary,
-  .btn-ghost {
-    width: auto;       
-    display: inline-flex; 
-    padding: 12px 20px;
-  }
-
-  /* STATS */
-  .vs-stats {
-    grid-template-columns: 1fr; /* empilha */
-  }
-
-  /* CARDS */
-  .vs-cards {
-    grid-template-columns: 1fr; /* 1 por linha */
-  }
-
-  .vs-card {
-    width: 100%;
-  }
-
-  /* FOOTER */
-  .vs-footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .vs-footer-links {
-    justify-content: center;
-  }
-  
-  .mosaic {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-.hero-logo {
-  width: 90px;
-}
-
-@media (max-width: 768px) {
-  .vs-cards {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 768px) {
-  .btn-plan {
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-    display: block; /* Necessário para o margin: auto funcionar */
-  }
-}
-}
-
 </style>
 </head>
 
